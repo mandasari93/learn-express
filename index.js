@@ -10,6 +10,7 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded())
 
 let marvelHeroes = {
+    next_id: 12,
     data: [
         {
             id: 1,
@@ -102,6 +103,28 @@ app.get("/marvelHeroes/:id", (req, res) => {
 
     res.send({
         data: hero
+    })
+})
+
+//Save new hero
+
+app.post("/marvelHeroes", (req, res) => {
+    const newHeroes = {
+        id: marvelHeroes.next_id,
+        name: req.body.name,
+        power: req.body.power
+    }
+
+    const newMarvelHeroes = {
+        next_id: marvelHeroes.next_id + 1,
+        data: marvelHeroes.data.concat(newHeroes)
+    }
+
+    marvelHeroes = newMarvelHeroes
+
+    res.send({
+        newdata: newHeroes,
+        data: marvelHeroes
     })
 })
 
