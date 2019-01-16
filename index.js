@@ -93,4 +93,16 @@ app.get("/marvelHeroes/search", (req, res) => {
     })
 })
 
+//Get superheroes by Id
+
+app.get("/marvelHeroes/:id", (req, res) => {
+    const hero = marvelHeroes.data.find(hero => {
+        return hero.id === Number(req.params.id)
+    })
+
+    res.send({
+        data: hero
+    })
+})
+
 app.listen(port, () => console.log("4000"))
