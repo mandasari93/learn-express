@@ -29,7 +29,7 @@ let marvelHeroes = {
         {
             id: 4,
             name: "Hulk",
-            power: "Become a Giant"
+            power: "Turn into a green Giant"
         },
         {
             id: 5,
