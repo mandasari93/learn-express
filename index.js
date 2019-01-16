@@ -152,5 +152,19 @@ app.delete("/marvelHeroes/:id", (req, res) => {
     })
 })
 
+//Updata data superheroes by id
+
+app.put("/marvelHeroes/:id", (req, res) => {
+    marvelHeroes.data[req.params.id - 1] = {
+        id: req.params.id,
+        name: req.body.name,
+        power: req.body.power
+    }
+
+    res.send({
+        data: marvelHeroes.data
+    })
+})
+
 
 app.listen(port, () => console.log("4000"))
