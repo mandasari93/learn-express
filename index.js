@@ -128,6 +128,16 @@ app.post("/marvelHeroes", (req, res) => {
     })
 })
 
+//Delete all superheroes
+
+app.delete("/marvelHeroes", (req, res) => {
+   marvelHeroes.data.splice(0, marvelHeroes.data.length)
+
+    res.send({
+    data: marvelHeroes.data
+    })
+})
+
 //delete superheroes by id
 
 app.delete("/marvelHeroes/:id", (req, res) => {
@@ -141,5 +151,6 @@ app.delete("/marvelHeroes/:id", (req, res) => {
         data: marvelHeroes.data
     })
 })
+
 
 app.listen(port, () => console.log("4000"))
