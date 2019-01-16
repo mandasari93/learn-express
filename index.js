@@ -16,66 +16,88 @@ let avengersHeroes = {
       id: 1,
       name: "Thor",
       realName: "Thor Odinson",
+      citizenship: "Asgardian",
+      universe: "Earth-616",
       power: "Lightning"
     },
     {
       id: 2,
       name: "Ironman",
       realName: "Tony Stark",
+      citizenship: "American",
+      universe: "Earth-616",
       power: "Jarvis"
     },
     {
       id: 3,
       name: "Captain Marvel",
       realName: "Mar-Vell",
+      citizenship: "Kree Empire",
+      universe: "Earth-616",
       power: "She can do everything"
     },
     {
       id: 4,
       name: "Hulk",
       realName: "Robert Bruce Banner",
+      citizenship: "American, Sakaaran",
+      universe: "Earth-616",
       power: "Turn into a green Giant"
     },
     {
       id: 5,
       name: "Deadpool",
       realName: "Wade Wilson",
+      citizenship: "Canadian",
+      universe: "Earth-616",
       power: "Regeneration"
     },
     {
       id: 6,
       name: "Doctor Strange",
       realName: "Doctor Stephen Vincent Strange",
+      citizenship: "American",
+      universe: "Earth-616",
       power: "Magic"
     },
     {
       id: 7,
       name: "Captain America",
       realName: "Steven Grant Rogers",
+      citizenship: "American",
+      universe: "Earth-616",
       power: "Super power"
     },
     {
       id: 8,
       name: "Antman",
       realName: "Scott Edward Harris Lang",
+      citizenship: "American",
+      universe: "Earth-616",
       power: "Resize"
     },
     {
       id: 9,
       name: "Spiderman",
       realName: "Peter Benjamin Parker",
+      citizenship: "American",
+      universe: "Earth-616",
       power: "Spider sense"
     },
     {
       id: 10,
       name: "Black Panther",
       realName: "T'Challa",
+      citizenship: "Wakanda",
+      universe: "Earth-616",
       power: "Vibranium"
     },
     {
       id: 11,
       name: "Daredevil",
       realName: "Matt Murdock",
+      citizenship: "American",
+      universe: "Earth-616",
       power: "Blind sense"
     }
   ]
@@ -124,6 +146,8 @@ app.post("/avengersHeroes", (req, res) => {
     id: avengersHeroes.next_id,
     name: req.body.name,
     realName: req.body.realName,
+    citizenship: req.body.citizenship,
+    universe: req.body.universe,
     power: req.body.power
   };
 
@@ -171,6 +195,8 @@ app.put("/avengersHeroes/:id", (req, res) => {
     id: req.params.id,
     name: req.body.name,
     realName: req.body.realName,
+    citizenship: req.body.citizenship,
+    universe: req.body.universe,
     power: req.body.power
   };
 
