@@ -128,4 +128,18 @@ app.post("/marvelHeroes", (req, res) => {
     })
 })
 
+//delete superheroes by id
+
+app.delete("/marvelHeroes/:id", (req, res) => {
+    const deleteHeroes = marvelHeroes.data.filter(
+        item => item.id !== Number(req.params.id)
+    )
+
+    marvelHeroes.data = deleteHeroes
+
+    res.send({
+        data: marvelHeroes.data
+    })
+})
+
 app.listen(port, () => console.log("4000"))
