@@ -54,7 +54,7 @@ let marvelHeroes = {
         {
             id: 9,
             name: "Spiderman",
-            power: "Spidersans"
+            power: "Spider sense"
         },
         {
             id: 10,
@@ -75,6 +75,21 @@ app.get("/marvelHeroes", (req, res) => {
     res.send({
         count: marvelHeroes.data.length,
         data: marvelHeroes.data
+    })
+})
+
+//Search Superheroes by name
+
+app.get("/marvelHeroes/search", (req, res) => {
+    const queryName = req.query.name.toLowerCase()
+
+    const foundHero = marvelHeroes.data.find(hero => {
+        return hero.name.toLowerCase().includes(queryName)
+    })
+
+    res.send({
+        query: req.query,
+        data: foundHero
     })
 })
 
